@@ -1,0 +1,16 @@
+# ============================================================
+# 《天神下凡》设定工程 —— Git 行尾锁定（双机均为 Windows，防 autocrlf 破坏纪律）
+# 纪律要求（见 MEMORY.md）：
+#   - 设定集工作稿 .md 必须纯 LF（脚本 assert b'\r' not in raw）
+#   - 六百万字总纲 .md 必须纯 CRLF
+# ============================================================
+
+# 默认：所有文本按 LF 入库/检出（我们的源稿多为 LF）
+*.md  text eol=lf
+*.txt text eol=lf
+*.svg text eol=lf
+*.py  text eol=lf
+
+# 总纲例外：必须保持纯 CRLF（覆盖上面的 lf）
+天神下凡_六百万字完本总纲.md               text eol=crlf
+天神下凡_六百万字完本总纲_v1.2备份.md       text eol=crlf
