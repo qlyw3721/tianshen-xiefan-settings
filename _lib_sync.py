@@ -11,7 +11,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(BASE, ".lib_sync_state.json")
 FILES = {
     "docx": os.path.join(BASE, "天神下凡设定集_归纳整理版_v1.2.docx"),
-    "md":   os.path.join(BASE, "天神下凡设定集_归纳整理版_v1.2.md"),
+    "md":   os.path.join(BASE, "天神下凡设定集_归纳整理版_v1.77.md"),
 }
 
 def sha256(path):

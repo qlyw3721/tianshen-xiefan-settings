@@ -1,5 +1,6 @@
 import re
 
+# 注：v1.77 起本机设定集改名为 ..._v1.77.md；本脚本为 v1.66 历史留档，复现时请改此路径
 local_path = "E:/天神下凡/天神下凡设定集_归纳整理版_v1.2.md"
 space_path = "E:/天神下凡/_compare_space_v1.4.1.md"
 out_path   = "E:/天神下凡/天神下凡设定集_归纳整理版_v1.66整合.md"
