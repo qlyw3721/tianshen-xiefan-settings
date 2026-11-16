@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-"""把设定集 md 转成 docx（复用 v1.2.docx 的 styles/sectPr/页脚），无 pandoc 依赖。"""
+"""把设定集 md 转成 docx（复用 _tpl_base_v1.77.docx 的 styles/sectPr/页脚），无 pandoc 依赖。
+使用：改下方 SRC_MD / OUT 两个文件名即可（md 与 docx 须同名，见设定集 §0.6 第十六款）。"""
 import io, os, re, zipfile, datetime, html
 
 BASE = 'E:/天神下凡/'
-SRC_MD = BASE + '天神下凡设定集_归纳整理版_v1.77.md'
-TPL = BASE + '天神下凡设定集_归纳整理版_v1.2.docx'
-OUT = BASE + '天神下凡设定集_归纳整理版_v1.77.docx'
+SRC_MD = BASE + '天神下凡设定集_归纳整理版_v1.78.md'
+TPL = BASE + '历史版本/_tpl_base_v1.77.docx'
+OUT = BASE + '天神下凡设定集_归纳整理版_v1.78.docx'
 
 ILLEGAL = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f]')
 
@@ -360,7 +361,7 @@ def main():
         elif item.filename == 'docProps/core.xml':
             x = data.decode('utf-8')
             x = re.sub(r'<dc:title>.*?</dc:title>',
-                       '<dc:title>《天神下凡》设定集 · 归纳整理版 v1.77</dc:title>', x, flags=re.S)
+                       '<dc:title>《天神下凡》设定集 · 归纳整理版 v1.78</dc:title>', x, flags=re.S)
             x = re.sub(r'<dcterms:modified[^>]*>.*?</dcterms:modified>',
                        '<dcterms:modified xsi:type="dcterms:W3CDTF">%s</dcterms:modified>' % now, x, flags=re.S)
             data = x.encode('utf-8')
