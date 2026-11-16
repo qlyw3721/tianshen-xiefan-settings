@@ -4,9 +4,9 @@
 import io, os, re, zipfile, datetime, html
 
 BASE = 'E:/天神下凡/'
-SRC_MD = BASE + '天神下凡设定集_归纳整理版_v1.78.md'
+SRC_MD = BASE + '天神下凡设定集_归纳整理版_v1.79.md'
 TPL = BASE + '历史版本/_tpl_base_v1.77.docx'
-OUT = BASE + '天神下凡设定集_归纳整理版_v1.78.docx'
+OUT = BASE + '天神下凡设定集_归纳整理版_v1.79.docx'
 
 ILLEGAL = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f]')
 
