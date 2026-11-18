@@ -4,9 +4,9 @@
 import io, os, re, zipfile, datetime, html
 
 BASE = 'E:/天神下凡/'
-SRC_MD = BASE + '天神下凡设定集_归纳整理版_v1.96.md'
+SRC_MD = BASE + '天神下凡设定集_归纳整理版_v1.97.md'
 TPL = BASE + '历史版本/_tpl_base_v1.77.docx'
-OUT = BASE + '天神下凡设定集_归纳整理版_v1.96.docx'
+OUT = BASE + '天神下凡设定集_归纳整理版_v1.97.docx'
 
 ILLEGAL = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f]')
 
@@ -361,7 +361,7 @@ def main():
         elif item.filename == 'docProps/core.xml':
             x = data.decode('utf-8')
             x = re.sub(r'<dc:title>.*?</dc:title>',
-                       '<dc:title>《天神下凡》设定集 · 归纳整理版 v1.96</dc:title>', x, flags=re.S)
+                       '<dc:title>《天神下凡》设定集 · 归纳整理版 v1.97</dc:title>', x, flags=re.S)
             x = re.sub(r'<dcterms:modified[^>]*>.*?</dcterms:modified>',
                        '<dcterms:modified xsi:type="dcterms:W3CDTF">%s</dcterms:modified>' % now, x, flags=re.S)
             data = x.encode('utf-8')
