@@ -43,11 +43,11 @@ def read_lines(path):
 
 def latest_md():
     cands = [f for f in os.listdir(BASE)
-             if re.match(r'^天神下凡设定集_归纳整理版_v[\d.]+\.md$', f)]
+             if re.match(r'^天神下凡设定集_归纳整理版_[vV][\d.]+\.md$', f)]
     if not cands:
         return None
     def key(f):
-        v = re.search(r'v([\d.]+)\.md$', f).group(1)
+        v = re.search(r'[vV]([\d.]+)\.md$', f).group(1)
         return tuple(int(x) for x in v.split('.'))
     return os.path.join(BASE, sorted(cands, key=key)[-1])
 
@@ -224,7 +224,7 @@ def cmd_check(_args):
     if not md:
         print('❌ 找不到设定集 md')
         return 2
-    ver = re.search(r'v([\d.]+)\.md$', os.path.basename(md)).group(1)
+    ver = re.search(r'[vV]([\d.]+)\.md$', os.path.basename(md)).group(1)
     docx = md[:-3] + '.docx'
     print('=' * 66)
     print('收口自检：v%s' % ver)

@@ -90,11 +90,11 @@ RULES = [
 def load_target(path_arg):
     if path_arg:
         return path_arg
-    mds = glob.glob(os.path.join(BASE, '天神下凡设定集_归纳整理版_v*.md'))
+    mds = glob.glob(os.path.join(BASE, '天神下凡设定集_归纳整理版_[vV]*.md'))
     best = None
     bv = (-1,)
     for m in mds:
-        mt = re.search(r'_v(\d+\.\d+)\.md$', os.path.basename(m))
+        mt = re.search(r'_[vV](\d+\.\d+)\.md$', os.path.basename(m))
         if mt:
             v = tuple(int(x) for x in mt.group(1).split('.'))
             if v > bv:

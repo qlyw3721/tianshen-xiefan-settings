@@ -117,10 +117,10 @@ for key, n, kw in WRONG:
 # ---------- 4. 设定集版本与 CRLF ----------
 print('=' * 70)
 print('【4/4】设定集版本与 CRLF 纯净度')
-mds = glob.glob(os.path.join(BASE, '天神下凡设定集_归纳整理版_v*.md'))
+mds = glob.glob(os.path.join(BASE, '天神下凡设定集_归纳整理版_[vV]*.md'))
 vers = []
 for m in mds:
-    mt = re.search(r'_v(\d+\.\d+)\.md$', os.path.basename(m))
+    mt = re.search(r'_[vV](\d+\.\d+)\.md$', os.path.basename(m))
     if mt:
         vers.append((tuple(int(x) for x in mt.group(1).split('.')), mt.group(1), m))
 vers.sort()
